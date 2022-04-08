@@ -1,16 +1,36 @@
-public class Test{ // starting point of application
-	public static void main(String[] args) { 
+abstract class Shape{
+	public abstract void draw(); 
+}
 
-	   Address a1=new Address("114","Dream Valley Road","MNK","Hyd","TS","INDIA",500005);
-	   	
-	   Student s1=new Student(111,"ABC",89,87,67,"DAC","Female",a1);
-       s1.disp();
-       s1.findAvg();
-       
-       Address a2=new Address("204","MG Road","MNK","Hyd","TS","INDIA",500005);
+abstract class Rectangle extends Shape{
+}
 
-       Student s2=new Student(111,"ABC",89,87,67,"DASSD","Male",a2);
-       s2.disp();
-       s2.findAvg();
+class Square extends Rectangle{
+	public void draw(){
+	System.out.println("Drawing Square....!");
+}
+}
+
+class Circle extends Shape{
+	public void draw(){
+		System.out.println("Drawing Circle");
 	}
+}
+
+class Triangle extends Shape{
+	public void draw(){
+		System.out.println("Drawing Traingle!!");
 	}
+}
+
+public class Test{
+	public static void main(String[] args) {
+		Shape s1=new Square();
+		s1.draw();
+		Shape s2=new Circle();
+		s2.draw();
+		Shape s3=new Triangle();
+		s3.draw();
+	}
+}
+
